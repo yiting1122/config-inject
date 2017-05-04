@@ -11,4 +11,6 @@ public interface ConfigProcessor {
 
 	void storeOneFile(ConfigBaseModel configBaseModel);
 
+	void inject2Conf();
+
 }

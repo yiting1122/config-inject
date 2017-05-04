@@ -5,6 +5,8 @@ import com.yiting.annotation.ConfigFileItem;
 import com.yiting.model.ConfigBaseModel;
 import com.yiting.model.ConfigFileModel;
 import com.yiting.model.ScanStaticModel;
+import com.yiting.processor.ConfigFileProcessor;
+import com.yiting.processor.ConfigProcessor;
 import com.yiting.store.FileStore;
 import org.reflections.Reflections;
 import org.reflections.scanners.MethodAnnotationsScanner;
@@ -50,6 +52,10 @@ public class Scanner {
 
 		FileStore.loadFileProperties(FileStore.class.getResource("/").getPath());
 		FileStore.transferScanData(configBaseModelList);
+
+
+		ConfigProcessor configProcessor=new ConfigFileProcessor();
+		configProcessor.inject2Conf();
 
 
 	}
